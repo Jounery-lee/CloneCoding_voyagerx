@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style>
+      body{
+        margin:0px;
+      }
+      #header{
+        display:grid;
+        grid-template-columns: 600px 650px 430px;
+        /* '1fr' is relative setting.
+        so when i make broswer's size down, 1fr is getting smaller.
+        WTF i made it!!!!!!!!!!*/
+        grid-template-rows: 105px;
+        border-bottom: 2px gray solid;
+        box-shadow: 0px 2px silver;
+      }
+      #topimg{
+        max-width:40%;
+        margin-left:350px;
+        margin-top:30px;
+      }
+      #topmenu{
+        diplasy:grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        text-align:center;
+        margin:auto;
+      }
+      #topmenu span{
+        margin:20px;
+        font-size:17px;
+        color:#808080;
+        transition:0.7s;
+      }
+      #topmenu span:hover{
+        color:black;
+      }
+      #topbutton{
+        margin-top:30px;
+        border: 1px #808080 solid;
+        background-color: white;
+        font-size: 20px;
+        padding:10px;
+        width: 90px;
+        text-align: left;
+        color: #808080;
+        transition:0.7s;
+      }
+      #topbutton:hover{
+        color:black;
+        background-color:#808080;
+      }
+      #mainimg{
+        height:100%
+        width: auto;
+        /* To make <div>size relative.
+          화면을 줄였을때 오른쪽에 공백이 남는건..*/
+        background-image: url("mainimg/earth.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: white;
+        text-align:center;
+      }
+      #maintext{
+        font-size:22px;
+        line-height: 40px;
+      }
+      #Projectsunderline{
+        display:grid;
+        grid-template-columns: 1fr 36px 1fr;
+      }
+      #underline{
+        border-top: 4px black solid;
+      }
+      #underline2{
+        border-top: 4px white solid;
+      }
+      #projects{
+        display:grid;
+        grid-template-columns:312px 10px 312px 10px 312px;
+      }
+      #projects img{
+        width:312px;
+        height:315px;
+        border: 1px solid #808080;
+      }
+      #newssection{
+        display:grid;
+        grid-template-areas: "left news1 right"
+                             "left news2 right"
+                             "left news3 right"
+                             "left news4 right";
+        width:100%;
+        height: auto;
+        grid-template-rows: 269px 269px 269px 269px;
+        grid-template-columns: 1fr 850px 1fr;
+      }
+      #newssection > left {
+        grid-area: left;
+        background-color: none;
+      }
+      #newssection > right {
+        grid-area: right;
+        background-color: none;
+      }
+      #newssection > news1 {
+        grid-area: news1;
+        background-color: white;
+        margin: 15px;
+      }
+      #newssection > news2 {
+        grid-area: news2;
+        background-color: white;
+        margin: 15px;
+      }
+      #newssection > news3 {
+        grid-area: news3;
+        background-color: white;
+        margin: 15px;
+      }
+      #newssection > news4 {
+        grid-area: news4;
+        background-color: white;
+        margin: 15px;
+        margin-bottom: 30px;
+      }
+      #leaders{
+        display:grid;
+        grid-template-areas: "photo1 profile1 "
+                             "photo2 profile2 "
+                             "photo3 profile3 ";
+        width:900px;
+        height: auto;
+        grid-template-columns: 200px 700px;
+        grid-template-rows: 340px 340px 340px;
+      }
+      #leaders > photo1{
+        grid-area: photo1;
+      }
+      #leaders > profile1{
+        grid-area: profile1;
+      }
+      #leaders > photo2{
+        grid-area: photo2;
+      }
+      #leaders > profile2{
+        grid-area: profile2;
+      }
+      #leaders > photo3{
+        grid-area: photo3;
+      }
+      #leaders > profile3{
+        grid-area: profile3;
+      }
+      #leaders > right{
+        background-color:red;
+      }
+      #pagemaker{
+        display:grid;
+        grid-template-columns: 200px 700px;
+        width:900px;
+        height:auto;
+      }
+    </style>
+    <title>VoyagerX(보이저엑스) | 인공지능 스타트업 | 대한민국</title>
+  </head>
+  <body>
+    <div id="header" >
+      <div><img id="topimg" src="voyagerx.png" alt="" ></div>
+      <div id="topmenu">
+        <span>Home</span>
+        <span>Projects</span>
+        <span>NewsFounders</span>
+        <span>Leaders</span>
+        <span>Careers</span>
+        <span>Contact</span>
+      </div>
+      <div>
+        <button id="topbutton">
+          <span style="margin-right:10px;">KO</span>
+          <span id="topbuttonright"><img src="down.png" style="width:30%;"></span>
+          <!--svg?인가 하는걸로 모양그리기 방법은 찾았는데...-->
+        </button>
+      </div>
+    </div>
+    <div id="mainimg">
+     <div id="maintext">
+        <br><br><br><br>
+        사람은 배고픕니다.<br>
+        사람은 두렵습니다.<br>
+        사람은 외롭습니다.<br>
+        사람은 심심합니다.<br>
+        사람은 궁금합니다.<br>
+        사람은 멋있습니다.<br>
+        사람은 사랑합니다.<br><br>
+        그래서 사람들은 함께 일을 합니다.<br>
+        ​···<br>
+        그리고 태양계 밖으로 탐사선을 보내는 기적을 이룹니다.
+        <br><br><br>
+     </div>
+    </div>
+    <h2 style="font-size:40px; text-align:center; margin-bottom:10px;">
+      Projects
+    </h2>
+    <div id=Projectsunderline>
+      <div></div><div id=underline></div><div></div>
+    </div>
+    <div id=projects style=" width:956px; height:550px; margin-left:auto; margin-right:auto; margin-top:20px;">
+      <div>
+        <img src="projects/vrew.png">
+        <h2 style="text-align:center; font-size:25px; margin-top: 50px; margin-bottom:2px;">Vrew</h2>
+        <div style="text-align:center; color:#808080">영상편집이 쉬워진다!</div>
+        <div style="text-align:center; margin-top:30px;">
+          <input type="button" value="자세히보기" style="
+          border:2px black solid; border-radius: 20px; background-color:white; font-size:15px;
+          padding-top:9px; padding-bottom:9px; padding-left:30px; padding-right:30px;
+          ">
+        </div>
+      </div>
+      <div></div>
+      <div>
+        <img src="projects/vflat.png">
+        <h2 style="text-align:center; font-size:25px; margin-top: 50px; margin-bottom:2px;">vflat</h2>
+        <div style="text-align:center; color:#808080">내 손 안에 모바일 스캐너</div>
+        <div style="text-align:center; margin-top:30px;">
+          <input type="button" value="자세히보기" style="
+          border:2px black solid; border-radius: 20px; background-color:white; font-size:15px;
+          padding-top:9px; padding-bottom:9px; padding-left:30px; padding-right:30px;
+          ">
+        </div>
+      </div>
+      <div></div>
+      <div>
+        <img src="projects/온글잎.png">
+        <h2 style="text-align:center; font-size:25px; margin-top: 50px; margin-bottom:2px;">온글잎</h2>
+        <div style="text-align:center; color:#808080">손글씨를 폰트로</div>
+        <div style="text-align:center; margin-top:30px;">
+          <input type="button" value="자세히보기" style="
+          border:2px black solid; border-radius: 20px; background-color:white; font-size:15px;
+          padding-top:9px; padding-bottom:9px; padding-left:30px; padding-right:30px;
+          ">
+        </div>
+      </div>
+    </div>
+    <div id=movie style="text-align:center; margin-bottom:20px;"><h3>​인공지능 신대륙을 개척하는 한국의 탐험가들</h3><iframe width="900" height="500" src="https://www.youtube.com/embed/MhyE59TVWok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  <div style="background-color:#212121;" >
+    <h2 style="font-size:40px; text-align:center; margin-bottom:10px; padding-top: 30px;color:white;">
+      News</h2>
+    <div id=Projectsunderline>
+      <div></div><div id=underline2 style="margin-bottom:40px;"></div><div></div>
+    </div>
+    <section id=newssection>
+      <left></left>
+      <news1><input type="button" value="김익환이 만난 혁신 기업가(30) 보이저엑스 남세동 대표" style="margin-left:30px; margin-top:30px; background-color:white; font-size:20px; border:0px; display:block;">
+        <div style="margin-left:35px; margin-top:5px; font-size:10px;">forbes 2022.03.22</div>
+        <div style="margin:35px; font-size:13px;">넷플릭스의 ‘규칙 없음(No Rules Rules)’처럼 룰은 최소화하고 끊임없이 바꾼다는 원칙을 세우고, 무제한 휴가 제도를 운영하고 있는 점이 인상 깊었다. 이 외에 보이저엑스만의 독특한 문화가 있다면?
+        나는 어떻게 하면 직원들에게 일을 시키지 않을까 고민한다. 바꿔 말하면 어떻게 하면 직원들이 스스로 하고 싶어서 하게 할까 고민하는 게 내 일이다. 경험상 내 말이 맞을 확률이 높더라도 직원들이 원하는 아이디어를 내고 시도하도록 내버려둔다. 안 되는 아이디어라도 하고 싶은 걸 해야 책임지고 성공시킬 확률이 높아지기 때문이다. 직원들이 원하지 않는데 내가 끌고 가는 순간, 성공률이 높은 아이디어라도 실패할 확률이 커진다.
+        그래서 난 내 선택이 틀려도 즐겁다. 보이저엑스의 아이디어는 사용자, 팀워크, 성장이라는 3대 가치를 충족해야 한다. 이 3가지 가치가 다른 것과 충돌할 때는 다른 걸 버린다</div></news1>
+      <news2><input type="button" value="김익환이 만난 혁신 기업가(30) 보이저엑스 남세동 대표" style="margin-left:30px; margin-top:30px; background-color:white; font-size:20px; border:0px; display:block;">
+        <div style="margin-left:35px; margin-top:5px; font-size:10px;">forbes 2022.03.22</div>
+        <div style="margin:35px; font-size:13px;">넷플릭스의 ‘규칙 없음(No Rules Rules)’처럼 룰은 최소화하고 끊임없이 바꾼다는 원칙을 세우고, 무제한 휴가 제도를 운영하고 있는 점이 인상 깊었다. 이 외에 보이저엑스만의 독특한 문화가 있다면?
+        나는 어떻게 하면 직원들에게 일을 시키지 않을까 고민한다. 바꿔 말하면 어떻게 하면 직원들이 스스로 하고 싶어서 하게 할까 고민하는 게 내 일이다. 경험상 내 말이 맞을 확률이 높더라도 직원들이 원하는 아이디어를 내고 시도하도록 내버려둔다. 안 되는 아이디어라도 하고 싶은 걸 해야 책임지고 성공시킬 확률이 높아지기 때문이다. 직원들이 원하지 않는데 내가 끌고 가는 순간, 성공률이 높은 아이디어라도 실패할 확률이 커진다.
+        그래서 난 내 선택이 틀려도 즐겁다. 보이저엑스의 아이디어는 사용자, 팀워크, 성장이라는 3대 가치를 충족해야 한다. 이 3가지 가치가 다른 것과 충돌할 때는 다른 걸 버린다</div></news2>
+      <news3><input type="button" value="김익환이 만난 혁신 기업가(30) 보이저엑스 남세동 대표" style="margin-left:30px; margin-top:30px; background-color:white; font-size:20px; border:0px; display:block;">
+        <div style="margin-left:35px; margin-top:5px; font-size:10px;">forbes 2022.03.22</div>
+        <div style="margin:35px; font-size:13px;">넷플릭스의 ‘규칙 없음(No Rules Rules)’처럼 룰은 최소화하고 끊임없이 바꾼다는 원칙을 세우고, 무제한 휴가 제도를 운영하고 있는 점이 인상 깊었다. 이 외에 보이저엑스만의 독특한 문화가 있다면?
+        나는 어떻게 하면 직원들에게 일을 시키지 않을까 고민한다. 바꿔 말하면 어떻게 하면 직원들이 스스로 하고 싶어서 하게 할까 고민하는 게 내 일이다. 경험상 내 말이 맞을 확률이 높더라도 직원들이 원하는 아이디어를 내고 시도하도록 내버려둔다. 안 되는 아이디어라도 하고 싶은 걸 해야 책임지고 성공시킬 확률이 높아지기 때문이다. 직원들이 원하지 않는데 내가 끌고 가는 순간, 성공률이 높은 아이디어라도 실패할 확률이 커진다.
+        그래서 난 내 선택이 틀려도 즐겁다. 보이저엑스의 아이디어는 사용자, 팀워크, 성장이라는 3대 가치를 충족해야 한다. 이 3가지 가치가 다른 것과 충돌할 때는 다른 걸 버린다</div></news3>
+      <news4><input type="button" value="김익환이 만난 혁신 기업가(30) 보이저엑스 남세동 대표" style="margin-left:30px; margin-top:30px; background-color:white; font-size:20px; border:0px; display:block;">
+        <div style="margin-left:35px; margin-top:5px; font-size:10px;">forbes 2022.03.22</div>
+        <div style="margin:35px; font-size:13px;">넷플릭스의 ‘규칙 없음(No Rules Rules)’처럼 룰은 최소화하고 끊임없이 바꾼다는 원칙을 세우고, 무제한 휴가 제도를 운영하고 있는 점이 인상 깊었다. 이 외에 보이저엑스만의 독특한 문화가 있다면?
+        나는 어떻게 하면 직원들에게 일을 시키지 않을까 고민한다. 바꿔 말하면 어떻게 하면 직원들이 스스로 하고 싶어서 하게 할까 고민하는 게 내 일이다. 경험상 내 말이 맞을 확률이 높더라도 직원들이 원하는 아이디어를 내고 시도하도록 내버려둔다. 안 되는 아이디어라도 하고 싶은 걸 해야 책임지고 성공시킬 확률이 높아지기 때문이다. 직원들이 원하지 않는데 내가 끌고 가는 순간, 성공률이 높은 아이디어라도 실패할 확률이 커진다.
+        그래서 난 내 선택이 틀려도 즐겁다. 보이저엑스의 아이디어는 사용자, 팀워크, 성장이라는 3대 가치를 충족해야 한다. 이 3가지 가치가 다른 것과 충돌할 때는 다른 걸 버린다</div></news4>
+      <right></right>
+    </section>
+  </div>
+  <div>
+    <h2 style="font-size:40px; text-align:center; margin-bottom:10px; padding-top: 30px;">
+      Founder</h2>
+    <div id=Projectsunderline>
+      <div></div><div id=underline style="margin-bottom:40px;"></div><div></div>
+    </div>
+    <div style="text-align:center;">
+      <img src="personphoto/남세동.png" alt="" style="width:25%; padding-top:50px; border-radius:50%;">
+      <h3>남세동</h3>
+      <p style="font-size: 13px;">보이저엑스 사장 겸 대표이사</p>
+      <p style="font-size: 9px; line-height: 16px;">보이저엑스 공동창업(2017 - )<br>
+         LINE 서비스 실장 (2009 - 2015)<br>
+         네이버 웹로봇 개발팀장 (2006 - 2009)<br>
+         네오위즈 세이클럽 개발 팀장, 기획팀장(1998 - 2005)
+         KAIST 전산학
+      </p>
+      <div style="margin-top:100px; margin-bottom:40px;">
+        <h3>천재개발자 남세동의 인공지능(딥러닝) 이야기</h3>
+        <iframe width="372" height="210" src="https://www.youtube.com/embed/kMGEpIYPCiM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  <div style="background-color:#eeeeee; border-bottom:1.5px black solid;">
+    <h2 style="font-size:40px; text-align:center; margin-bottom:10px; padding-top: 100px;">
+      Leaders</h2>
+    <div id=Projectsunderline>
+      <div></div><div id=underline style="margin-bottom:40px;"></div><div></div>
+    </div>
+    <section id="leaders" style="margin-left: auto; margin-right:auto; background-color:white;">
+      <photo1 style="text-align:center;">
+        <img src="personphoto/김무궁.png" style="width:90%;">
+      </photo1>
+      <profile1>
+       <h3 style="margin-top:20px; font-size:30px;">김무궁</h3>
+       <p style="font-size:15px;">vFlat 리더</p>
+       <p style="padding-right:10px; font-size: 15px;line-height:20px;">
+         2017년부터 딥러닝에 관심을 가졌고 2018년 1월에 보이저엑스 합류해 <<!---->vFlat<!---->>을 개발하여 2019년에 출시하였다.
+         2016년에 1인 기업 마스마스 스튜디오를 창업해 <<!---->Dex Max<!---->>, <<!---->Film 시리즈<!---->> 등의 최고 인기 유료앱을 출시하였다.
+         2010년에 OGQ를 창업해 <<!---->OGQ 배경화면<!---->> 앱을 출시, 반년간 전세계 인기 1위, 그리고 1억 다운로드를 달성했다.
+         2002년부터 카이스트에서 전산학을 전공하였고, 병역 특례 기간 중에 사이람과 나우콤에서 주요 제품의 개발을 주도하였다.
+         18살때는 지인과 함께 메일 수집/발송 시스템을 공동 개발 판매하였고, 이후에도 학업 중에 10여개의 외주 개발을 했다.
+         9살때부터 프로그래밍을 시작해, 17살 때 공모전 1등으로 정보통신부 장관상을 받고, 19살 때 또 정보통신부 장관상을 받았다.</p>
+      </profile1>
+      <photo2 style="text-align:center;">
+        <img src="personphoto/장재화.png" style="width:90%;">
+      </photo2>
+      <profile2>
+        <h3 style="margin-top:20px; font-size:30px;">장재화</h3>
+        <p style="font-size:15px;">vrew 리더</p>
+        <p style="padding-right:10px; font-size: 15px;line-height:20px;">
+          2017년부터 딥러닝에 관심을 가졌고 2018년 1월에 보이저엑스 합류해 <<!---->vFlat<!---->>을 개발하여 2019년에 출시하였다.
+          2016년에 1인 기업 마스마스 스튜디오를 창업해 <<!---->Dex Max<!---->>, <<!---->Film 시리즈<!---->> 등의 최고 인기 유료앱을 출시하였다.
+          2010년에 OGQ를 창업해 <<!---->OGQ 배경화면<!---->> 앱을 출시, 반년간 전세계 인기 1위, 그리고 1억 다운로드를 달성했다.
+          2002년부터 카이스트에서 전산학을 전공하였고, 병역 특례 기간 중에 사이람과 나우콤에서 주요 제품의 개발을 주도하였다.
+          18살때는 지인과 함께 메일 수집/발송 시스템을 공동 개발 판매하였고, 이후에도 학업 중에 10여개의 외주 개발을 했다.
+          9살때부터 프로그래밍을 시작해, 17살 때 공모전 1등으로 정보통신부 장관상을 받고, 19살 때 또 정보통신부 장관상을 받았다.</p>
+      </profile2>
+      <photo3 style="text-align: center;">
+        <img src="personphoto/장재화.png" style="width:90%;">
+      </photo3>
+      <profile3>
+        <h3 style="margin-top:20px; font-size:30px;">석영수</h3>
+        <p style="font-size:15px;">vrew 리더</p>
+        <p style="padding-right:10px; font-size: 15px;line-height:20px;">
+          2017년부터 딥러닝에 관심을 가졌고 2018년 1월에 보이저엑스 합류해 <<!---->vFlat<!---->>을 개발하여 2019년에 출시하였다.
+          2016년에 1인 기업 마스마스 스튜디오를 창업해 <<!---->Dex Max<!---->>, <<!---->Film 시리즈<!---->> 등의 최고 인기 유료앱을 출시하였다.
+          2010년에 OGQ를 창업해 <<!---->OGQ 배경화면<!---->> 앱을 출시, 반년간 전세계 인기 1위, 그리고 1억 다운로드를 달성했다.
+          2002년부터 카이스트에서 전산학을 전공하였고, 병역 특례 기간 중에 사이람과 나우콤에서 주요 제품의 개발을 주도하였다.
+          18살때는 지인과 함께 메일 수집/발송 시스템을 공동 개발 판매하였고, 이후에도 학업 중에 10여개의 외주 개발을 했다.
+          9살때부터 프로그래밍을 시작해, 17살 때 공모전 1등으로 정보통신부 장관상을 받고, 19살 때 또 정보통신부 장관상을 받았다.</p>
+      </profile3>
+    </section>
+  </div>
+  <div>
+    <h2 style="font-size:40px; text-align:center; margin-bottom:10px; padding-top: 100px;">
+      PageMaker</h2>
+    <div id=Projectsunderline>
+      <div></div><div id=underline style="margin-bottom:40px;"></div><div></div>
+    </div>
+    <div id="pagemaker" style="margin-left: auto; margin-right:auto;">
+      <div><img src="personphoto/이주연.png" style="width:80%; border-radius:40%;"></div>
+      <div>
+        <h3 style="margin-top:20px; font-size:30px;">이주연</h3>
+        <p style="font-size:15px;">Journey Lee</p>
+        <p style="padding-right:8px; font-size: 15px;line-height:20px;">
+          음악 열심히 했다. 이제 나도 4대보험 한번 받아보자. 나도 취업 한번 해보자.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div style="background-color:#eeeeee;">
+    <h2 style="font-size:40px; text-align:center; margin-bottom:10px; padding-top: 100px;" >
+      Career</h2>
+    <div id=Projectsunderline>
+      <div></div><div id=underline style="margin-bottom:40px;"></div><div></div>
+    </div>
+    <div style="text-align:center;">
+      <ul style="list-style-type: none; padding:0px;">
+        <li style="margin:10px;">부산 예술 대학교 졸업</li>
+        <li style="margin:10px;">서울 디지털 대학교 졸업</li>
+        <li style="margin:10px;">코마 실용음악학원 출강</li>
+        <li style="margin:10px;">부산뮤직 실용음악학원 출강</li>
+        <li style="margin:10px;">울산 동구 진로멘토링 강사 활동</li>
+        <li style="margin:10px;">울산 울주군 진로멘토링 강사 활동</li>
+        <li style="margin:10px;">부산 신라중학교 밴드부 Sody 지도</li>
+        <li style="margin:10px;">울산과학대학 창의인성프로그램 유레카 출강</li>
+      </ul>
+      <div style="margin-top:80px;">
+      <span><iframe width="560" height="315" src="https://www.youtube.com/embed/EZHLnaq1NAs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>
+      <span><iframe width="560" height="315" src="https://www.youtube.com/embed/O4AA8KwGv4w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;">
+      <div style="margin-top:100px; margin-bottom:60px; font-size:30px;">
+        좋은 사수 있는 곳 찾습니다.<br>
+        열심히 하겠습니다.
+      </div>
+    <input type="button" name="" value="자세한 이력 확인하기"
+      onclick="window.open('https://jounery-lee.github.io/Profile/index.html'+location.search)"
+      style="margin-bottom: 100px; border-radius:30px; background-color:#1565C0; width:200px; height:50px; color:white; border:none;">
+  </div>
+  <div style="background-color:#eeeeee;">
+    <h2 style="font-size:40px; text-align:center; margin-bottom:10px; padding-top: 100px;" >
+      Contact</h2>
+    <div id=Projectsunderline>
+      <div></div><div id=underline style="margin-bottom:40px;"></div><div></div>
+    </div>
+    <div style="text-align:center; padding-bottom:30px;">
+      rmfo2@naver.com<br>
+      부산광역시 2호선 수영역 인근<br>
+    </div>
+    <div style="text-align:center; color: white;background-color:#212121; padding:50px;">
+      © 2022 Journey Lee HAVE NO RIGHTS THIS FORM.
+    </div>
+  </div>
+  </body>
+</html>
